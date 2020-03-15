@@ -39,7 +39,7 @@ function function2() {
   res.redirect('/');
 }
 
-app.post('/',function(req,res)
+app.post('/nithin',function(req,res)
 {
   //sess = req.session;
    n1=req.body.username;
