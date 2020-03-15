@@ -442,7 +442,7 @@ app.post('/sendmail',function(req,res)
       for (i = 0; i < results.length; i++) {
       html+='<tr><th scope="row">'+i+'</th><td>'+results[i].name+'</td><td>'+results[i].email+'</td><td>'+results[i].pnum+'</td><td>'+results[i].cgpa+'</td><td>'+results[i].rno+'</td><td>'+results[i].p1+'</td><td>'+results[i].p2+'</td><td>'+results[i].p3+'</td><td>'+results[i].p4+'</td></tr>';
       }
-      html+='</tbody></table></p><br><br><a href="https://sillystonebraker-e437ea.netlify.com/studpage" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a></body></html>';
+      html+='</tbody></table></p><br><br><a href="http://localhost:8081/studpage" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a></body></html>';
         res.send(html);
      }
     });
