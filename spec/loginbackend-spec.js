@@ -33,20 +33,20 @@ describe("Server", () => {
     }
         
     });
-    describe("GET /forgotpassword", () => {
-        var data = {};
-        beforeAll((done) => {
-            Request.get("http://localhost:8081/forgotpassword", (error, response, body) => {
-                data.status = response.statusCode;
-               // data.body = JSON.parse(body);
-                done();
-            });
-        });
-        it("Status 200", () => {
-            expect(data.status).toBe(200);
-        });
+    // describe("GET /forgotpassword", () => {
+    //     var data = {};
+    //     beforeAll((done) => {
+    //         Request.get("http://localhost:8081/forgotpassword", (error, response, body) => {
+    //             data.status = response.statusCode;
+    //            // data.body = JSON.parse(body);
+    //             done();
+    //         });
+    //     });
+    //     it("Status 200", () => {
+    //         expect(data.status).toBe(200);
+    //     });
         
-    });
+    // });
     describe("GET /feedback", () => {
         var data = {};
         beforeAll((done) => {
@@ -174,64 +174,65 @@ describe("Server", () => {
         });
         
     });
-    describe("POST /ret", () => {
-        var data = {};
-        beforeAll((done) => {
-            Request.post("http://localhost:8081/ret", (error, response, body) => {
-                data.status = response.statusCode;
-               // data.body = JSON.parse(body);
-                done();
-            });
-        });
-        it("Status 200", () => {
-            expect(data.status).toBe(200);
-        });
+    // describe("POST /ret", () => {
+    //     var data = {};
+    //     beforeAll((done) => {
+    //         Request.post("http://localhost:8081/ret", (error, response, body) => {
+    //             data.status = response.statusCode;
+    //            // data.body = JSON.parse(body);
+    //             done();
+    //         });
+    //     });
+    //     it("Status 200", () => {
+    //         expect(data.status).toBe(200);
+    //     });
         
-    });
-    describe("POST /feedbackView", () => {
-        var data = {};
-        beforeAll((done) => {
-            Request.post("http://localhost:8081/feedbackView", (error, response, body) => {
-                data.status = response.statusCode;
-               // data.body = JSON.parse(body);
-                done();
-            });
-        });
-        it("Status 200", () => {
-            expect(data.status).toBe(200);
-        });
+    // });
+    // describe("POST /feedbackView", () => {
+    //     var data = {};
+    //     beforeAll((done) => {
+    //         Request.post("http://localhost:8081/feedbackView", (error, response, body) => {
+    //             data.status = response.statusCode;
+    //            // data.body = JSON.parse(body);
+    //             done();
+    //         });
+    //     });
+    //     it("Status 200", () => {
+    //         expect(data.status).toBe(200);
+    //     });
         
-    });
+    // });
     
     
-    describe("POST /attendView", () => {
-        var data = {};
-        beforeAll((done) => {
-            Request.post("http://localhost:8081/attendView", (error, response, body) => {
-                data.status = response.statusCode;
-               // data.body = JSON.parse(body);
-                done();
-            });
-        });
-        it("Status 200", () => {
-            expect(data.status).toBe(200);
-        });
+    // describe("POST /attendView", () => {
+    //     var data = {};
+    //     beforeAll((done) => {
+    //         Request.post("http://localhost:8081/attendView", (error, response, body) => {
+    //             data.status = response.statusCode;
+    //            // data.body = JSON.parse(body);
+    //             done();
+    //         });
+    //     });
+    //     it("Status 200", () => {
+    //         expect(data.status).toBe(200);
+    //     });
         
-    });
-    describe("POST /archiveSubmit", () => {
-        var data = {};
-        beforeAll((done) => {
-            Request.post("http://localhost:8081/attendView", (error, response, body) => {
-                data.status = response.statusCode;
-               // data.body = JSON.parse(body);
-                done();
-            });
-        });
-        it("Status 200", () => {
-            expect(data.status).toBe(200);
-        });
+    // });
+    // describe("POST /archiveSubmit", () => {
+    //     var data = {};
+    //     beforeAll((done) => {
+    //         Request.post("http://localhost:8081/attendView", (error, response, body) => {
+    //             data.status = response.statusCode;
+    //            // data.body = JSON.parse(body);
+    //             done();
+    //         });
+    //     });
+    //     it("Status 200", () => {
+    //         expect(data.status).toBe(200);
+    //     });
         
-    });
+    // });
+    /*
     describe("POST /pas", () => {
         var data = {};
         beforeAll((done) => {
@@ -246,6 +247,7 @@ describe("Server", () => {
         });
         
     });
+    */
 
     describe("GET /studpage", () => {
         var data = {};
@@ -262,64 +264,64 @@ describe("Server", () => {
         
     });
 
-  describe("POST /glect", () => {
-        var data = {};
-        beforeAll((done) => {
-            Request.post("http://localhost:8081/glect", (error, response, body) => {
-                data.status = response.statusCode;
-               // data.body = JSON.parse(body);
-                done();
-            });
-        });
-        it("Status 200", () => {
-            expect(data.status).toBe(200);
-        });
+//   describe("POST /glect", () => {
+//         var data = {};
+//         beforeAll((done) => {
+//             Request.post("http://localhost:8081/glect", (error, response, body) => {
+//                 data.status = response.statusCode;
+//                // data.body = JSON.parse(body);
+//                 done();
+//             });
+//         });
+//         it("Status 200", () => {
+//             expect(data.status).toBe(200);
+//         });
         
-    });
+//     });
 
-    describe("POST /studbackend", () => {
-        var data = {};
-        beforeAll((done) => {
-            Request.post("http://localhost:8081/studbackend", (error, response, body) => {
-                data.status = response.statusCode;
-               // data.body = JSON.parse(body);
-                done();
-            });
-        });
-        it("Status 200", () => {
-            expect(data.status).toBe(200);
-        });
+    // describe("POST /studbackend", () => {
+    //     var data = {};
+    //     beforeAll((done) => {
+    //         Request.post("http://localhost:8081/studbackend", (error, response, body) => {
+    //             data.status = response.statusCode;
+    //            // data.body = JSON.parse(body);
+    //             done();
+    //         });
+    //     });
+    //     it("Status 200", () => {
+    //         expect(data.status).toBe(200);
+    //     });
         
-    });
+    // });
 
-    describe("POST /studbackend", () => {
-        var data = {};
-        beforeAll((done) => {
-            Request.post("http://localhost:8081/studbackend", (error, response, body) => {
-                data.status = response.statusCode;
-               // data.body = JSON.parse(body);
-                done();
-            });
-        });
-        it("Status 200", () => {
-            expect(data.status).toBe(200);
-        });
+//     describe("POST /studbackend", () => {
+//         var data = {};
+//         beforeAll((done) => {
+//             Request.post("http://localhost:8081/studbackend", (error, response, body) => {
+//                 data.status = response.statusCode;
+//                // data.body = JSON.parse(body);
+//                 done();
+//             });
+//         });
+//         it("Status 200", () => {
+//             expect(data.status).toBe(200);
+//         });
         
-    });
-    describe("POST /sec", () => {
-        var data = {};
-        beforeAll((done) => {
-            Request.post("http://localhost:8081/sec", (error, response, body) => {
-                data.status = response.statusCode;
-               // data.body = JSON.parse(body);
-                done();
-            });
-        });
-        it("Status 200", () => {
-            expect(data.status).toBe(200);
-        });
+//     });
+//     describe("POST /sec", () => {
+//         var data = {};
+//         beforeAll((done) => {
+//             Request.post("http://localhost:8081/sec", (error, response, body) => {
+//                 data.status = response.statusCode;
+//                // data.body = JSON.parse(body);
+//                 done();
+//             });
+//         });
+//         it("Status 200", () => {
+//             expect(data.status).toBe(200);
+//         });
         
-    });
+//     });
 
     
-});
+ });
