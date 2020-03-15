@@ -61,6 +61,7 @@ app.post('/',function(req,res)
   //     res.status(200);
   // });
 
+
   connection.query('SELECT * from login where username=? and password=?',[n1,n2] ,function (error, results, fields) {
     var length=results.length;
     connection.query('SELECT attempts from login where username=?',[n1] ,function (error, results, fields) {  
@@ -86,7 +87,7 @@ app.post('/',function(req,res)
           res.write("<html> <head><center><h1>Your Account has been Locked</h1>");
         //   var i;
         //   for(i=0;i<result.length;i++){
-          res.write("</center></head><body><center><br><br><h2><a href='http://locahost:8081/forgotpassword'> Follow this link to reset password</a><h2> ");
+          res.write("</center></head><body><center><br><br><h2><a href='http://localhost:8081/forgotpassword'> Follow this link to reset password</a><h2> ");
           res.write("</center</body></html>");
           res.end();
           //counter = 1
@@ -120,7 +121,7 @@ app.post('/',function(req,res)
       // req.session.username = n1;
       var lego=0
       connection.query('update login set attempts =? where username=?',[lego,n1],function(error,results,fields){if (error) throw error;});
-      res.sendFile('C:/Users/node prog/html pages/glect2 (7).html');
+      res.sendFile("glect2 (7).html",{ root: __dirname });
       //res.redirect('/home');
      res.status(200);
     f=f&&1;
@@ -141,18 +142,18 @@ app.set('view engine','ejs');
 app.get('/back',function(req,res)
 {
 
-res.sendFile('C:/Users/node prog/html pages/glect2 (7).html');
+  res.sendFile("glect2 (7).html",{ root: __dirname });
 res.status(200);
 
 });
 app.get('/b', function(req, res) {
-  res.sendFile('C:/Users/node prog/html pages/b.html');
+  res.sendFile('b.html',{ root: __dirname });
 	res.status(200);	
 	
 });
 
 app.get('/attend', function(req, res) {
-  res.sendFile('C:/Users/node prog/html pages/attendancepage.html');
+  res.sendFile('attendancepage.html',{ root: __dirname });
 	res.status(200);	
 	
 });
@@ -160,7 +161,7 @@ app.get('/attend', function(req, res) {
 
 app.get("/forgotpassword", function(req, res) {
   //res.sendFile('__dirname','first.html');
-  res.sendFile("C:/Users/node prog/html pages/forgotpassword.html");
+  res.sendFile("forgotpassword.html",{ root: __dirname });
   res.status(200);
 });
 var username
@@ -181,14 +182,14 @@ app.post("/sec", function(req, res) {
             res.render('indexforgotpassword',{data: {name : "Error"}});
           }
           else{
-            res.sendFile("C:/Users/node prog/html pages/resetpwd.html");
+            res.sendFile("resetpwd.html",{ root: __dirname });
           }
       });
     });
   });
   app.get("/changepassword", function(req, res) {
     //res.sendFile('__dirname','first.html');
-    res.sendFile("C:/Users/node prog/html pages/changepassword.html");
+    res.sendFile("changepassword.html",{ root: __dirname });
     res.status(200);
   });
   var username
@@ -208,14 +209,14 @@ app.post("/sec", function(req, res) {
               res.render('indexchangepassword',{data: {name : "Error"}});
             }
             else{
-              res.sendFile("C:/Users/node prog/html pages/resetpwd.html");
+              res.sendFile("resetpwd.html",{ root: __dirname });
             }
         });
       });
     });
   app.get("/resetpassword", function(req, res) {
     //res.sendFile('__dirname','first.html');
-    res.sendFile("C:/Users/node prog/html pages/resetpwd.html");
+    res.sendFile("resetpwd.html",{ root: __dirname });
     res.status(200);
   });
   app.post("/ret", function(req, res) {
@@ -228,6 +229,7 @@ app.post("/sec", function(req, res) {
         // WHERE condition;
         connection.query("update login set password ='"+sq+"' where username = '"+username+"'", function(err, result, fields) {
         if (err) throw err;
+        connection.query('update login set attempts =? where username=?',[0,sq],function(error,results,fields){if (error) throw error;});
         res.writeHead(200,{'Content-Type':'text/html'});
           res.write("<html> <head>   <script type='text/javascript'>window.history.forward();function noBack() { window.history.forward(); } </script><center><h1>Your Password has been changed</h1>");
         //   var i;
@@ -241,16 +243,16 @@ app.post("/sec", function(req, res) {
     res.status(200);
   });
   app.get("/done", function(req, res) {
-    res.sendFile("C:/Users/node prog/html pages/loginfair (5).html");
+    res.sendFile("loginfair (5).html",{ root: __dirname });
     res.status(200);
   });
   app.get("/studpage", function(req, res) {
-    res.sendFile("C:/Users/node prog/html pages/attendanceClass.html");
+    res.sendFile("attendanceClass.html",{ root: __dirname });
     res.status(200);
   });
 
   app.get("/feedback", function(req, res) {
-    res.sendFile("C:/Users/node prog/html pages/feedbackHome.html");
+    res.sendFile("feedbackHome.html",{ root: __dirname });
     res.status(200);
   });
 
@@ -339,7 +341,7 @@ app.post("/sec", function(req, res) {
           }
         });
 
-          res.sendFile("C:/Users/node prog/html pages/glect2 (7).html");
+          res.sendFile("glect2 (7).html",{ root: __dirname });
         }
     });
   });
@@ -393,12 +395,12 @@ app.post('/studbackend',function(req,res)
 app.get("/", function(req, res) {
   //res.sendFile('__dirname','first.html');
  // console.log('st')
-  res.sendFile("C:/Users/node prog/html pages/loginfair (5).html");
+  res.sendFile("loginfair (5).html",{ root: __dirname });
   //console.log('fin')
 });
 app.get("/archive", function(req, res) {
   //res.sendFile('__dirname','first.html');
-  res.sendFile("C:/Users/node prog/html pages/archiveHome.html");
+  res.sendFile("archiveHome.html",{ root: __dirname });
   res.status(200);
 });
 /*
