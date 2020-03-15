@@ -7,9 +7,9 @@ var nodemailer = require('nodemailer');
  
 var app = express();
 // app.use(session({
-// 	secret: 'secret',
-// 	resave: false,
-// 	saveUninitialized: false
+//  secret: 'secret',
+//  resave: false,
+//  saveUninitialized: false
 // }));
 app.use(bodyParser.urlencoded({ extended: false }));
 var connection = mysql.createPool({
@@ -148,14 +148,14 @@ res.status(200);
 });
 app.get('/b', function(req, res) {
   res.sendFile('b.html',{ root: __dirname });
-	res.status(200);	
-	
+  res.status(200);  
+  
 });
 
 app.get('/attend', function(req, res) {
   res.sendFile('attendancepage.html',{ root: __dirname });
-	res.status(200);	
-	
+  res.status(200);  
+  
 });
 
 
@@ -243,7 +243,7 @@ app.post("/sec", function(req, res) {
     res.status(200);
   });
   app.get("/done", function(req, res) {
-    res.sendFile("loginfair (5).html",{ root: __dirname });
+    res.sendFile("index.html",{ root: __dirname });
     res.status(200);
   });
   app.get("/studpage", function(req, res) {
@@ -395,7 +395,7 @@ app.post('/studbackend',function(req,res)
 app.get("/", function(req, res) {
   //res.sendFile('__dirname','first.html');
  // console.log('st')
-  res.sendFile("loginfair (5).html",{ root: __dirname });
+  res.sendFile("index.html",{ root: __dirname });
   //console.log('fin')
 });
 app.get("/archive", function(req, res) {
