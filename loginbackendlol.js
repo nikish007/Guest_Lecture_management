@@ -39,7 +39,7 @@ function function2() {
   res.redirect('/');
 }
 
-app.post('/ll',function(req,res)
+app.post('/',function(req,res)
 {
   //sess = req.session;
    n1=req.body.username;
@@ -147,27 +147,27 @@ app.post('/ll',function(req,res)
 
 });
 app.set('view engine','ejs');
-app.get('https://silly-stonebraker-e437ea.netlify.com/back',function(req,res)
+app.get('/back',function(req,res)
 {
 
   res.sendFile("glect2 (7).html",{ root: __dirname });
 res.status(200);
 
 });
-app.get('https://silly-stonebraker-e437ea.netlify.com/b', function(req, res) {
+app.get('/b', function(req, res) {
   res.sendFile('loginfair (5).html',{ root: __dirname });
 	res.status(200);	
 	
 });
 
-app.get('https://silly-stonebraker-e437ea.netlify.com/attend', function(req, res) {
+app.get('/attend', function(req, res) {
   res.sendFile('attendancepage.html',{ root: __dirname });
 	res.status(200);	
 	
 });
 
 
-app.get("https://silly-stonebraker-e437ea.netlify.com/forgotpassword", function(req, res) {
+app.get("/forgotpassword", function(req, res) {
   //res.sendFile('__dirname','first.html');
   res.sendFile("forgotpassword.html",{ root: __dirname });
   res.status(200);
@@ -195,7 +195,7 @@ app.post("/sec", function(req, res) {
       });
     });
   });
-  app.get("https://silly-stonebraker-e437ea.netlify.com/changepassword", function(req, res) {
+  app.get("/changepassword", function(req, res) {
     //res.sendFile('__dirname','first.html');
     res.sendFile("changepassword.html",{ root: __dirname });
     res.status(200);
@@ -250,16 +250,16 @@ app.post("/sec", function(req, res) {
     });
     res.status(200);
   });
-  app.get("https://silly-stonebraker-e437ea.netlify.com/done", function(req, res) {
+  app.get("/done", function(req, res) {
     res.sendFile("loginfair (5).html",{ root: __dirname });
     res.status(200);
   });
-  app.get("https://silly-stonebraker-e437ea.netlify.com/studpage", function(req, res) {
+  app.get("/studpage", function(req, res) {
     res.sendFile("attendanceClass.html",{ root: __dirname });
     res.status(200);
   });
 
-  app.get("https://silly-stonebraker-e437ea.netlify.com/feedback", function(req, res) {
+  app.get("/feedback", function(req, res) {
     res.sendFile("feedbackHome.html",{ root: __dirname });
     res.status(200);
   });
@@ -400,13 +400,13 @@ app.post('/studbackend',function(req,res)
 });
 
 
-app.get("https://silly-stonebraker-e437ea.netlify.com/", function(req, res) {
+app.get("/", function(req, res) {
   //res.sendFile('__dirname','first.html');
  // console.log('st')
   res.sendFile("loginfair (5).html",{ root: __dirname });
   //console.log('fin')
 });
-app.get("https://silly-stonebraker-e437ea.netlify.com/archive", function(req, res) {
+app.get("/archive", function(req, res) {
   //res.sendFile('__dirname','first.html');
   res.sendFile("archiveHome.html",{ root: __dirname });
   res.status(200);
@@ -582,7 +582,7 @@ app.post('/feedbackView',function(req,res)
 });
 
 
-app.get('https://silly-stonebraker-e437ea.netlify.com/AttendanceUpdate/:date',function(req,res){
+app.get('/AttendanceUpdate/:date',function(req,res){
   console.log(date)
 })
 app.post('/AttendanceUpdate',function(req,res)
