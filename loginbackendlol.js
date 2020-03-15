@@ -39,7 +39,7 @@ function function2() {
   res.redirect('/');
 }
 
-app.post('/',function(req,res)
+app.post('/ll',function(req,res)
 {
   //sess = req.session;
    n1=req.body.username;
@@ -95,7 +95,7 @@ app.post('/',function(req,res)
           res.write("<html> <head><center><h1>Your Account has been Locked</h1>");
         //   var i;
         //   for(i=0;i<result.length;i++){
-          res.write("</center></head><body><center><br><br><h2><a href='https://silly-stonebraker-e437ea.netlify.com/forgotpassword'> Follow this link to reset password</a><h2> ");
+          res.write("</center></head><body><center><br><br><h2><a href='http://localhost:8081/forgotpassword'> Follow this link to reset password</a><h2> ");
           res.write("</center</body></html>");
           res.end();
           //counter = 1
@@ -147,27 +147,27 @@ app.post('/',function(req,res)
 
 });
 app.set('view engine','ejs');
-app.get('/back',function(req,res)
+app.get('https://silly-stonebraker-e437ea.netlify.com/back',function(req,res)
 {
 
   res.sendFile("glect2 (7).html",{ root: __dirname });
 res.status(200);
 
 });
-app.get('/b', function(req, res) {
+app.get('https://silly-stonebraker-e437ea.netlify.com/b', function(req, res) {
   res.sendFile('loginfair (5).html',{ root: __dirname });
 	res.status(200);	
 	
 });
 
-app.get('/attend', function(req, res) {
+app.get('https://silly-stonebraker-e437ea.netlify.com/attend', function(req, res) {
   res.sendFile('attendancepage.html',{ root: __dirname });
 	res.status(200);	
 	
 });
 
 
-app.get("/forgotpassword", function(req, res) {
+app.get("https://silly-stonebraker-e437ea.netlify.com/forgotpassword", function(req, res) {
   //res.sendFile('__dirname','first.html');
   res.sendFile("forgotpassword.html",{ root: __dirname });
   res.status(200);
@@ -195,7 +195,7 @@ app.post("/sec", function(req, res) {
       });
     });
   });
-  app.get("/changepassword", function(req, res) {
+  app.get("https://silly-stonebraker-e437ea.netlify.com/changepassword", function(req, res) {
     //res.sendFile('__dirname','first.html');
     res.sendFile("changepassword.html",{ root: __dirname });
     res.status(200);
@@ -242,7 +242,7 @@ app.post("/sec", function(req, res) {
           res.write("<html> <head>   <script type='text/javascript'>window.history.forward();function noBack() { window.history.forward(); } </script><center><h1>Your Password has been changed</h1>");
         //   var i;
         //   for(i=0;i<result.length;i++){
-          res.write("</center></head><body><center><br><br><h2><a href='https://silly-stonebraker-e437ea.netlify.com/done'> Reset Link </a><h2> ");
+          res.write("</center></head><body><center><br><br><h2><a href='http://localhost:8081/done'> Reset Link </a><h2> ");
           res.write("</center</body></html>");
           res.end();
         
@@ -250,16 +250,16 @@ app.post("/sec", function(req, res) {
     });
     res.status(200);
   });
-  app.get("/done", function(req, res) {
+  app.get("https://silly-stonebraker-e437ea.netlify.com/done", function(req, res) {
     res.sendFile("loginfair (5).html",{ root: __dirname });
     res.status(200);
   });
-  app.get("/studpage", function(req, res) {
+  app.get("https://silly-stonebraker-e437ea.netlify.com/studpage", function(req, res) {
     res.sendFile("attendanceClass.html",{ root: __dirname });
     res.status(200);
   });
 
-  app.get("/feedback", function(req, res) {
+  app.get("https://silly-stonebraker-e437ea.netlify.com/feedback", function(req, res) {
     res.sendFile("feedbackHome.html",{ root: __dirname });
     res.status(200);
   });
@@ -272,7 +272,7 @@ app.post("/sec", function(req, res) {
 {
   
   res.status(200);
-   n1=req.body.textnames || "iku";
+   n1=req.body.textnames || "ilku";
    n2=req.body.sex || "16";
    n3=req.body.dept || "CSE";
    n4=req.body.section ||"E";
@@ -391,7 +391,7 @@ app.post('/studbackend',function(req,res)
       for (i = 0; i < results.length; i++) {
       html+='<tr><th scope="row">'+i+'</th><td>'+results[i].name+'</td><td>'+results[i].email+'</td><td>'+results[i].pnum+'</td><td>'+results[i].cgpa+'</td><td>'+results[i].rno+'</td><td>'+results[i].p1+'</td><td>'+results[i].p2+'</td><td>'+results[i].p3+'</td><td>'+results[i].p4+'</td></tr>';
       }
-      html+='</tbody></table></p><br><br><a href="https://silly-stonebraker-e437ea.netlify.com/studpage" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a></body></html>';
+      html+='</tbody></table></p><br><br><a href="http://localhost:8081/studpage" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a></body></html>';
         res.send(html);
      }
     });
@@ -400,13 +400,13 @@ app.post('/studbackend',function(req,res)
 });
 
 
-app.get("/", function(req, res) {
+app.get("https://silly-stonebraker-e437ea.netlify.com/", function(req, res) {
   //res.sendFile('__dirname','first.html');
  // console.log('st')
   res.sendFile("loginfair (5).html",{ root: __dirname });
   //console.log('fin')
 });
-app.get("/archive", function(req, res) {
+app.get("https://silly-stonebraker-e437ea.netlify.com/archive", function(req, res) {
   //res.sendFile('__dirname','first.html');
   res.sendFile("archiveHome.html",{ root: __dirname });
   res.status(200);
@@ -582,7 +582,7 @@ app.post('/feedbackView',function(req,res)
 });
 
 
-app.get('/AttendanceUpdate/:date',function(req,res){
+app.get('https://silly-stonebraker-e437ea.netlify.com/AttendanceUpdate/:date',function(req,res){
   console.log(date)
 })
 app.post('/AttendanceUpdate',function(req,res)
