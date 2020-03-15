@@ -223,7 +223,7 @@ body {
              <td><%= rows[i].studentname %></td>
              <td><%= rows[i].rno %></td>
              <td><%= rows[i].feedback %></td><td>
-             <form name='ko'method="POST" action="https://silly-stonebraker-e437ea.netlify.com/feedbackUpdate">
+             <form name='ko'method="POST" action="http://localhost:8081/feedbackUpdate">
              <button name='buttonVal' value= <%= i %> style="background-color:black;color:white;"   >
               <%= rows[i].stat %> action taken
               </button>
