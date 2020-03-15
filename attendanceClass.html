@@ -33,19 +33,7 @@ font-size: 60px;
 margin-left: 10px;
 color: #FFC312;
 }
-.card{
-height: auto;
-margin-top: auto;
-margin-bottom: auto;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
-}
 
-.social_icon span{
-font-size: 60px;
-margin-left: 10px;
-color: #FFC312;
-}
 
 .social_icon span:hover{
 color: white;
@@ -169,7 +157,7 @@ body {
   </script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
-  <!--Fontawesome CDN-->
+  
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <script type="text/javascript"> 
     window.history.forward(); 
@@ -187,21 +175,12 @@ body {
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <link href = "@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600')">
-<!-- Google Tag Manager (noscript) -->
-       <!--  <div class="navbar">
-  <a href="#">Home</a>
-  <a href="#">Student Details</a>
-  <a href="#">Logout</a>
-  
-  </div>  -->
+
   <div class="sd" style="background-color: rgb(206, 26, 26)">
   <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
     <div class="container1">
       <a href="#" class="navbar-brand">
-        <!-- Logo Image -->
-        <!-- <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt="" class="d-inline-block align-middle mr-2"> -->
-        <!-- Logo Text -->
-        <!-- <span class="text-uppercase font-weight-bold">Guest Lecture Maintenance</span> -->
+        
       </a>
   
       <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
@@ -230,7 +209,7 @@ body {
 	<h1>Students Details</h1> 
   </div>
 	<p> 
-        <form action="http://localhost:8081/studbackend" method="POST" >
+        <form action="http://localhost:8080/studbackend" method="POST" >
           
             DEPARTMENT
             <br>
@@ -282,8 +261,7 @@ body {
    </div>     
         <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
 <script>
-    //var firebase = require("firebase")
-  // Your web app's Firebase configuration
+  
   var firebaseConfig = {
     apiKey: "AIzaSyD2OnDil2kI7YVYR_lqPyH33WOmNdQ9Qsg",
     authDomain: "software-engineering-d1f51.firebaseapp.com",
@@ -294,9 +272,9 @@ body {
     appId: "1:52898460466:web:8086c239de967be3171d2b",
     measurementId: "G-1MBY0HBCGQ"
   };
-  // Initialize Firebase
+
   firebase.initializeApp(firebaseConfig);
-  //firebase.analytics();
+ 
   var filebutton=document.getElementById('fileButton');
   filebutton.addEventListener('change',function(e)
   {

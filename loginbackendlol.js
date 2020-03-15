@@ -7,9 +7,9 @@ var nodemailer = require('nodemailer');
  
 var app = express();
 // app.use(session({
-//  secret: 'secret',
-//  resave: false,
-//  saveUninitialized: false
+// 	secret: 'secret',
+// 	resave: false,
+// 	saveUninitialized: false
 // }));
 app.use(bodyParser.urlencoded({ extended: false }));
 var connection = mysql.createPool({
@@ -61,10 +61,17 @@ app.post('/',function(req,res)
   //     res.status(200);
   // });
 
-
-  connection.query('SELECT * from login where username=? and password=?',[n1,n2] ,function (error, results, fields) {
+  key='key12346123'
+  connection.query('SELECT * from login where username=? and password=AES_ENCRYPT(?,?)',[n1,n2,key] ,function (error, results, fields) {
     var length=results.length;
-    connection.query('SELECT attempts from login where username=?',[n1] ,function (error, results, fields) {  
+    connection.query('SELECT * from login where username=?',[n1] ,function (error, results, fields) {
+      var length1=results.length;
+      if(length1<=0)
+      {
+        res.render('index',{data: {name : "Error"}}); 
+      }
+      else{
+    connection.query('SELECT attempts from login where username=?',[n1] ,function (error, results, fields) { 
       if(length<=0 || results[0].attempts>=3)
       {
         //res.sendFile('C:/Users/node prog/html pages/loginfair (2).html')
@@ -76,6 +83,7 @@ app.post('/',function(req,res)
  
  
        //  }
+       
 
       connection.query('SELECT attempts from login where username=?',[n1] ,function (error, results, fields) {
         var lent = results[0].attempts
@@ -127,8 +135,8 @@ app.post('/',function(req,res)
     f=f&&1;
         
      }    
-  
-  
+    });
+  }
     });
   });
   if(f==1)
@@ -147,15 +155,15 @@ res.status(200);
 
 });
 app.get('/b', function(req, res) {
-  res.sendFile('b.html',{ root: __dirname });
-  res.status(200);  
-  
+  res.sendFile('loginfair (5).html',{ root: __dirname });
+	res.status(200);	
+	
 });
 
 app.get('/attend', function(req, res) {
   res.sendFile('attendancepage.html',{ root: __dirname });
-  res.status(200);  
-  
+	res.status(200);	
+	
 });
 
 
@@ -201,7 +209,7 @@ app.post("/sec", function(req, res) {
     
        connection.getConnection(function(err) {
        
-          connection.query("SELECT * FROM login where password='"+sq+"' and username='"+username+"'", function(err, results, fields) {
+          connection.query("SELECT * FROM login where password=AES_ENCRYPT('"+sq+"','key12346123') and username='"+username+"'", function(err, results, fields) {
             if(results.length<=0)
             {
               
@@ -227,9 +235,9 @@ app.post("/sec", function(req, res) {
         // UPDATE table_name
         // SET column1 = value1, column2 = value2, ...
         // WHERE condition;
-        connection.query("update login set password ='"+sq+"' where username = '"+username+"'", function(err, result, fields) {
+        connection.query("update login set password =AES_ENCRYPT('"+sq+"' ,'key12346123') where username = '"+username+"'", function(err, result, fields) {
         if (err) throw err;
-        connection.query('update login set attempts =? where username=?',[0,sq],function(error,results,fields){if (error) throw error;});
+        connection.query('update login set attempts =? where username=?',[0,username],function(error,results,fields){if (error) throw error;});
         res.writeHead(200,{'Content-Type':'text/html'});
           res.write("<html> <head>   <script type='text/javascript'>window.history.forward();function noBack() { window.history.forward(); } </script><center><h1>Your Password has been changed</h1>");
         //   var i;
@@ -243,7 +251,7 @@ app.post("/sec", function(req, res) {
     res.status(200);
   });
   app.get("/done", function(req, res) {
-    res.sendFile("index.html",{ root: __dirname });
+    res.sendFile("loginfair (5).html",{ root: __dirname });
     res.status(200);
   });
   app.get("/studpage", function(req, res) {
@@ -264,7 +272,7 @@ app.post("/sec", function(req, res) {
 {
   
   res.status(200);
-   n1=req.body.textnames || "Tiinku";
+   n1=req.body.textnames || "iku";
    n2=req.body.sex || "16";
    n3=req.body.dept || "CSE";
    n4=req.body.section ||"E";
@@ -395,7 +403,7 @@ app.post('/studbackend',function(req,res)
 app.get("/", function(req, res) {
   //res.sendFile('__dirname','first.html');
  // console.log('st')
-  res.sendFile("index.html",{ root: __dirname });
+  res.sendFile("loginfair (5).html",{ root: __dirname });
   //console.log('fin')
 });
 app.get("/archive", function(req, res) {
@@ -572,18 +580,29 @@ app.post('/feedbackView',function(req,res)
     });
 
 });
+
+
+app.get('/AttendanceUpdate/:date',function(req,res){
+  console.log(date)
+})
 app.post('/AttendanceUpdate',function(req,res)
 {
   sel=req.body.selectpicker;
-  ael = req.body.buttonVal1;
+  //ael = req.body.buttonVal1;
   
-   //console.log(rows[n1])
-   x1=rows[ael].studname;
-  x2=rows[ael].section;
-  x3=rows[ael].dept;
-  x4=req.body.GDate;
-  x5=req.body.Gtime;
-  console.log(y+z+x4+x5)
+   console.log(req.body.date)
+   x1=rows[req.body.buttonVal].studname;
+   x2=rows[req.body.buttonVal].section;
+    x3=rows[req.body.buttonVal].dept;
+   x4=req.body.date;
+   x5=req.body.time;
+  // ss = req.body.GDate
+  // console.log(req.)
+  // console.log(x1)
+  // console.log(x2)
+  // console.log(x3)
+  // console.log(x4)
+  // console.log(x5)
   //  console.log(n1);
     //n2=rows[n1].stat;
   // if(x4=='yes')
@@ -599,12 +618,12 @@ app.post('/AttendanceUpdate',function(req,res)
        var length=results.length;
         if(length<=0)
         {
-          
+          //console.log("222")
           res.send(y);
         }
         else{
           rows = results; 
-         
+         //console.log("111")
           res.render('attendView',{rows:results});
    
         }
@@ -618,6 +637,15 @@ app.post('/AttendanceUpdate',function(req,res)
 
 });
 
+app.post('/dt',function(req,res)
+{
+  dt1=req.body.GDate;
+  tt1=req.body.Gtime;
+  console.log(dt1);
+  console.log(tt1);
+  res.render('attendView',{rows:results});
+
+});
 
 var server=app.listen(8081,( ) =>{
   console.log("Listening on port " + server.address().port + "...");
