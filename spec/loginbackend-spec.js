@@ -11,7 +11,7 @@ describe("Server", () => {
     describe("POST /", () => {
         var data = {};
         beforeAll((done) => {
-            Request.post("http://localhost:8081/", (error, response, body) => {
+            Request.post("silly-stonebraker-e437ea.netlify.com/", (error, response, body) => {
                 data.status = response.statusCode;
                 //data.body = body;
                 done();
@@ -36,7 +36,7 @@ describe("Server", () => {
     describe("GET /forgotpassword", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:8081/forgotpassword", (error, response, body) => {
+            Request.get("silly-stonebraker-e437ea.netlify.com/forgotpassword", (error, response, body) => {
                 data.status = response.statusCode;
                // data.body = JSON.parse(body);
                 done();
@@ -50,7 +50,7 @@ describe("Server", () => {
     describe("GET /feedback", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:8081/feedback", (error, response, body) => {
+            Request.get("silly-stonebraker-e437ea.netlify.com/feedback", (error, response, body) => {
                 data.status = response.statusCode;
                // data.body = JSON.parse(body);
                 done();
@@ -64,7 +64,7 @@ describe("Server", () => {
     describe("GET /changepassword", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:8081/forgotpassword", (error, response, body) => {
+            Request.get("silly-stonebraker-e437ea.netlify.com/forgotpassword", (error, response, body) => {
                 data.status = response.statusCode;
                // data.body = JSON.parse(body);
                 done();
@@ -78,7 +78,7 @@ describe("Server", () => {
     describe("GET /b", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:8081/b", (error, response, body) => {
+            Request.get("silly-stonebraker-e437ea.netlify.com/b", (error, response, body) => {
                 data.status = response.statusCode;
                // data.body = JSON.parse(body);
                 done();
@@ -92,7 +92,7 @@ describe("Server", () => {
     describe("GET /back", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:8081/back", (error, response, body) => {
+            Request.get("silly-stonebraker-e437ea.netlify.com/back", (error, response, body) => {
                 data.status = response.statusCode;
                // data.body = JSON.parse(body);
                 done();
@@ -106,7 +106,7 @@ describe("Server", () => {
     describe("GET /attend", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:8081/attend", (error, response, body) => {
+            Request.get("silly-stonebraker-e437ea.netlify.com/attend", (error, response, body) => {
                 data.status = response.statusCode;
                // data.body = JSON.parse(body);
                 done();
@@ -120,7 +120,7 @@ describe("Server", () => {
     describe("GET /archive", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:8081/archive", (error, response, body) => {
+            Request.get("silly-stonebraker-e437ea.netlify.com/archive", (error, response, body) => {
                 data.status = response.statusCode;
                // data.body = JSON.parse(body);
                 done();
@@ -134,7 +134,7 @@ describe("Server", () => {
     describe("GET /resetpassword", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:8081/resetpassword", (error, response, body) => {
+            Request.get("silly-stonebraker-e437ea.netlify.com/resetpassword", (error, response, body) => {
                 data.status = response.statusCode;
                // data.body = JSON.parse(body);
                 done();
@@ -149,7 +149,7 @@ describe("Server", () => {
     describe("GET /forgotpassword", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:8081/forgotpassword", (error, response, body) => {
+            Request.get("silly-stonebraker-e437ea.netlify.com/forgotpassword", (error, response, body) => {
                 data.status = response.statusCode;
                // data.body = JSON.parse(body);
                 done();
@@ -163,7 +163,7 @@ describe("Server", () => {
     describe("GET /done", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:8081/done", (error, response, body) => {
+            Request.get("silly-stonebraker-e437ea.netlify.com/done", (error, response, body) => {
                 data.status = response.statusCode;
                // data.body = JSON.parse(body);
                 done();
@@ -177,7 +177,7 @@ describe("Server", () => {
     // describe("POST /ret", () => {
     //     var data = {};
     //     beforeAll((done) => {
-    //         Request.post("http://localhost:8081/ret", (error, response, body) => {
+    //         Request.post("silly-stonebraker-e437ea.netlify.com/ret", (error, response, body) => {
     //             data.status = response.statusCode;
     //            // data.body = JSON.parse(body);
     //             done();
@@ -191,7 +191,7 @@ describe("Server", () => {
     // describe("POST /feedbackView", () => {
     //     var data = {};
     //     beforeAll((done) => {
-    //         Request.post("http://localhost:8081/feedbackView", (error, response, body) => {
+    //         Request.post("silly-stonebraker-e437ea.netlify.com/feedbackView", (error, response, body) => {
     //             data.status = response.statusCode;
     //            // data.body = JSON.parse(body);
     //             done();
@@ -207,7 +207,7 @@ describe("Server", () => {
     // describe("POST /attendView", () => {
     //     var data = {};
     //     beforeAll((done) => {
-    //         Request.post("http://localhost:8081/attendView", (error, response, body) => {
+    //         Request.post("silly-stonebraker-e437ea.netlify.com/attendView", (error, response, body) => {
     //             data.status = response.statusCode;
     //            // data.body = JSON.parse(body);
     //             done();
@@ -221,7 +221,7 @@ describe("Server", () => {
     // describe("POST /archiveSubmit", () => {
     //     var data = {};
     //     beforeAll((done) => {
-    //         Request.post("http://localhost:8081/attendView", (error, response, body) => {
+    //         Request.post("silly-stonebraker-e437ea.netlify.com/attendView", (error, response, body) => {
     //             data.status = response.statusCode;
     //            // data.body = JSON.parse(body);
     //             done();
@@ -235,7 +235,7 @@ describe("Server", () => {
     // describe("POST /pas", () => {
     //     var data = {};
     //     beforeAll((done) => {
-    //         Request.post("http://localhost:8081/pas", (error, response, body) => {
+    //         Request.post("silly-stonebraker-e437ea.netlify.com/pas", (error, response, body) => {
     //             data.status = response.statusCode;
     //            // data.body = JSON.parse(body);
     //             done();
@@ -250,7 +250,7 @@ describe("Server", () => {
     describe("GET /studpage", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:8081/studpage", (error, response, body) => {
+            Request.get("silly-stonebraker-e437ea.netlify.com/studpage", (error, response, body) => {
                 data.status = response.statusCode;
                // data.body = JSON.parse(body);
                 done();
@@ -265,7 +265,7 @@ describe("Server", () => {
 //   describe("POST /glect", () => {
 //         var data = {};
 //         beforeAll((done) => {
-//             Request.post("http://localhost:8081/glect", (error, response, body) => {
+//             Request.post("silly-stonebraker-e437ea.netlify.com/glect", (error, response, body) => {
 //                 data.status = response.statusCode;
 //                // data.body = JSON.parse(body);
 //                 done();
@@ -280,7 +280,7 @@ describe("Server", () => {
     // describe("POST /studbackend", () => {
     //     var data = {};
     //     beforeAll((done) => {
-    //         Request.post("http://localhost:8081/studbackend", (error, response, body) => {
+    //         Request.post("silly-stonebraker-e437ea.netlify.com/studbackend", (error, response, body) => {
     //             data.status = response.statusCode;
     //            // data.body = JSON.parse(body);
     //             done();
@@ -295,7 +295,7 @@ describe("Server", () => {
     // describe("POST /studbackend", () => {
     //     var data = {};
     //     beforeAll((done) => {
-    //         Request.post("http://localhost:8081/studbackend", (error, response, body) => {
+    //         Request.post("silly-stonebraker-e437ea.netlify.com/studbackend", (error, response, body) => {
     //             data.status = response.statusCode;
     //            // data.body = JSON.parse(body);
     //             done();
@@ -309,7 +309,7 @@ describe("Server", () => {
     // describe("POST /sec", () => {
     //     var data = {};
     //     beforeAll((done) => {
-    //         Request.post("http://localhost:8081/sec", (error, response, body) => {
+    //         Request.post("silly-stonebraker-e437ea.netlify.com/sec", (error, response, body) => {
     //             data.status = response.statusCode;
     //            // data.body = JSON.parse(body);
     //             done();
