@@ -243,7 +243,7 @@ app.post("/sec", function(req, res) {
     res.status(200);
   });
   app.get("/done", function(req, res) {
-    res.sendFile("loginfair (5).html",{ root: __dirname });
+    res.sendFile("index.html",{ root: __dirname });
     res.status(200);
   });
   app.get("/studpage", function(req, res) {
@@ -395,7 +395,7 @@ app.post('/studbackend',function(req,res)
 app.get("/", function(req, res) {
   //res.sendFile('__dirname','first.html');
  // console.log('st')
-  res.sendFile("loginfair (5).html",{ root: __dirname });
+  res.sendFile("index.html",{ root: __dirname });
   //console.log('fin')
 });
 app.get("/archive", function(req, res) {
