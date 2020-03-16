@@ -31,11 +31,6 @@ jobs:
      - name: UI Testing succesfull
        run: echo running UI testinng
   
-     - uses: actions/setup-java@v1
-       with:
-          java-version: '8.0.72' # The JDK version to make available on the path.
-          java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
-          architecture: x64 # (x64 or x86) - defaults to x64
-     - run: java -cp java UiTesting
+
        env:
         CI: true
