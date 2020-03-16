@@ -155,7 +155,7 @@ res.status(200);
 
 });
 app.get('/b', function(req, res) {
-  res.sendFile('loginfair (5).html',{ root: __dirname });
+  res.sendFile('index.html',{ root: __dirname });
 	res.status(200);	
 	
 });
@@ -251,7 +251,7 @@ app.post("/sec", function(req, res) {
     res.status(200);
   });
   app.get("/done", function(req, res) {
-    res.sendFile("loginfair (5).html",{ root: __dirname });
+    res.sendFile("index.html",{ root: __dirname });
     res.status(200);
   });
   app.get("/studpage", function(req, res) {
