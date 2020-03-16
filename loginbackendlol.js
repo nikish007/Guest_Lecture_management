@@ -272,7 +272,7 @@ app.post("/sec", function(req, res) {
 {
   
   res.status(200);
-   n1=req.body.textnames || "ilku";
+   n1=req.body.textnames || "messi";
    n2=req.body.sex || "16";
    n3=req.body.dept || "CSE";
    n4=req.body.section ||"E";
